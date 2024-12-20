@@ -1,6 +1,7 @@
-# Choose a DISPLAY NAME for the service principal
-echo "What DISPLAY NAME would you like to utilize?"
-read DISPLAY_NAME
+# Set DISPLAY NAME from Terraform random name generation
+DISPLAY_NAME=`terraform output -raw service_principal`
+
+echo "DISPLAY_NAME="${DISPLAY_NAME} >> ./environment
 
 # Display chosen DISPLAY NAME on terminal
 echo "DISPLAY="${DISPLAY_NAME}
