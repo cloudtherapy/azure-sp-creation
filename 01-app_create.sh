@@ -12,7 +12,8 @@ SUBSCRIPTION_ID=`az account list --query "[?isDefault].id" --output tsv`
 echo "SUBSCRIPTION_ID="${SUBSCRIPTION_ID} >> ./environment
 
 # Create App Registration
-OBJECT_ID=`az ad app create --display-name ${DISPLAY_NAME} --sign-in-audience AzureADMultipleOrgs | jq -r '.id'`
+OBJECT_ID=`az ad app create --display-name ${DISPLAY_NAME} \
+--sign-in-audience AzureADMultipleOrgs | jq -r '.id'`
 
 # Store OBJECT_ID in environment file
 echo "OBJECT_ID="${OBJECT_ID} >> ./environment
