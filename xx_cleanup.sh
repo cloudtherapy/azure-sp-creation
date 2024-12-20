@@ -1,1 +1,1 @@
-az app delete --id ${OBJECT_ID}
+az ad app delete --id ${OBJECT_ID}
