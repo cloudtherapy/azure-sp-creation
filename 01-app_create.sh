@@ -1,10 +1,8 @@
 # Set DISPLAY NAME from Terraform random name generation
 DISPLAY_NAME=`terraform output -raw service_principal`
 
-echo "DISPLAY_NAME="${DISPLAY_NAME} >> ./environment
-
 # Display chosen DISPLAY NAME on terminal
-echo "DISPLAY="${DISPLAY_NAME}
+echo "DISPLAY_NAME="${DISPLAY_NAME}
 
 # Retrieve subscription ID
 SUBSCRIPTION_ID=`az account list --query "[?isDefault].id" --output tsv`
