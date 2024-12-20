@@ -1,7 +1,7 @@
 . ./environment
 
 # Create Enterprise Application
-SP_OBJECT_ID=`az ad sp create --id ${OBJECT_ID} | jq '.id'`
+SP_OBJECT_ID=`az ad sp create --id ${OBJECT_ID} | jq -r '.id'`
 
 # Store SP_OBJECT_ID in environment file
 echo "SP_OBJECT_ID="${SP_OBJECT_ID} >> ./environment
