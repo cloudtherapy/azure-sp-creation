@@ -1,3 +1,5 @@
+. ./environment
+
 # Add API permission of User.Read
 az ad app permission add --id ${OBJECT_ID} \
 --api 00000003-0000-0000-c000-000000000000 \
