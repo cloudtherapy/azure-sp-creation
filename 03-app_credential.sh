@@ -12,4 +12,4 @@ rm -f ./secret.json
 
 # Store appID and secret in environment file
 echo "APP_ID="${APP_ID} >> ./environment
-echo "SECRET_ID"${SECRET_ID} >> ./environment
+echo "SECRET_ID="${SECRET_ID} >> ./environment
