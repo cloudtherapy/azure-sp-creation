@@ -21,7 +21,6 @@ provider "random" {
 
 resource "random_pet" "service_principal" {
   prefix = "sp"
-  length = 3
 }
 
 output "service_principal" {
