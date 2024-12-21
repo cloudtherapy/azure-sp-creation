@@ -5,7 +5,7 @@ PREFIX=`az rest --method get --url https://graph.microsoft.com/v1.0/domains --qu
 DISPLAY_NAME=`terraform output -raw service_principal`_${PREFIX}
 
 # Display chosen DISPLAY NAME on terminal
-echo "DISPLAY_NAME="${DISPLAY_NAME}"_"$PREFIX
+echo "DISPLAY_NAME="${DISPLAY_NAME}"
 
 # Retrieve subscription ID
 SUBSCRIPTION_ID=`az account list --query "[?isDefault].id" --output tsv`
