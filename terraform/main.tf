@@ -33,6 +33,8 @@ resource "random_pet" "this" {
 
 resource "azuread_application" "this" {
   display_name = random_pet.this.id
+  identifier_uris = ["https://misfirm.com"]
+  sign_in_audience = "AzureADMultipleOrgs"
 }
 
 resource "azuread_service_principal" "this" {
@@ -43,7 +45,7 @@ resource "azuread_service_principal" "this" {
 
 resource "azuread_application_password" "this" {
   end_date       = "2299-12-30T23:00:00Z"
-  application_id = azuread_application.this.object_id
+  application_id = azuread_application.this.id
 }
 
 #@@@ Assign 'Contributor' role for the Service Principal in the Azure Subscription
