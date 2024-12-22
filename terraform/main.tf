@@ -4,19 +4,6 @@ data "azurerm_subscription" "this" {}
 # Data Source: Principal ID of the current user
 data "azuread_client_config" "this" {}
 
-# Azure Active Directory provider
-# https://registry.terraform.io/providers/hashicorp/azuread/latest/docs
-provider "azuread" {
-  tenant_id = data.azuread_client_config.this.tenant_id
-}
-
-# Azure Resource Manager provider
-# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
-provider "azurerm" {
-  features {}
-  subscription_id = data.azurerm_subscription.this.id
-}
-
 #@@@ Create random pet name for service_princpal
 resource "random_pet" "this" {
   prefix = "sp"
