@@ -11,7 +11,7 @@ output "client_secret" {
 }
 
 output "subscription_id" {
-  value = data.azurerm_subscription.this.subscription_id.id
+  value = data.azurerm_subscription.this.id
 }
 
 output "tenant_id" {
