@@ -2,7 +2,7 @@
 DOMAIN_NAME=`az rest --method get --url https://graph.microsoft.com/v1.0/domains --query 'value[?isDefault].id' -o tsv`
 
 # Set DISPLAY NAME from Terraform random name generation
-DISPLAY_NAME="SP_TF_"${DOMAIN_NAME}
+DISPLAY_NAME="sp_terraform_"${DOMAIN_NAME}
 
 # Display chosen DISPLAY NAME on terminal
 echo "DISPLAY_NAME="${DISPLAY_NAME}
