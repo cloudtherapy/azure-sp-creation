@@ -4,7 +4,9 @@
 SP_OBJECT_ID=`az ad sp create --id ${OBJECT_ID} | jq -r '.id'`
 
 # Store SP_OBJECT_ID in environment file
-echo "SP_OBJECT_ID="${SP_OBJECT_ID} >> ./environment
+echo "sp_object_id="${SP_OBJECT_ID} >> ./environment
 
 # Output SP_OBJECT_ID to terminal
-echo "SP_OBJECT_ID="${SP_OBJECT_ID}
+echo "sp_object_id="${SP_OBJECT_ID}
+
+cat ./environment
