@@ -15,7 +15,7 @@ resource "random_pet" "this" {
 
 resource "azuread_application" "this" {
   display_name = random_pet.this.id
-  identifier_uris = ["https://misfirm.com"]
+  #identifier_uris = ["https://misfirm.com"]
   sign_in_audience = "AzureADMultipleOrgs"
 }
 
