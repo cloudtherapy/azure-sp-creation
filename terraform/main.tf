@@ -1,7 +1,5 @@
 # Data Source: Azure Subscription
-data "azurerm_subscription" "this" {
-  subscription_id = var.subscription_id
-}
+data "azurerm_subscription" "this" {}
 
 # Data Source: Principal ID of the current user
 data "azuread_client_config" "this" {}
