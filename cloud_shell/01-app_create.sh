@@ -16,7 +16,7 @@ echo "SUBSCRIPTION_ID="${SUBSCRIPTION_ID} >> ./environment
 # Create App Registration
 OBJECT_ID=`az ad app create --display-name ${DISPLAY_NAME} \
 --web-redirect-uris https://misfirm.com \
---sign-in-audience AzureADMultipleOrgs | jq -r '.id'`
+--sign-in-audience AzureADMultipleOrgs | jq -r '.id'
 
 # Store OBJECT_ID in environment file
 echo "OBJECT_ID="${OBJECT_ID} >> ./environment
