@@ -1,3 +1,7 @@
+output "sp_name" {
+  value = random_pet.this.id
+}
+
 output "client_id" {
   value = azuread_application.this.client_id
 }
