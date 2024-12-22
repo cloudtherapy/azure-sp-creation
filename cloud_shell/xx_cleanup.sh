@@ -4,13 +4,19 @@
 az ad app delete --id ${OBJECT_ID}
 
 # Delete OBJECT_ID from environment file
-sed -i '/OBJECT_ID/d' ./environment
+sed -i '/object_id/d' ./environment
 
 # Delete SUBSCRIPTION_ID from environment file
-sed -i '/SUBSCRIPTION_ID/d' ./environment
+sed -i '/subscription_id/d' ./environment
 
 # Delete APP_ID from environment file
-sed -i '/APP_ID/d' ./environment
+sed -i '/client_id/d' ./environment
 
 # Delete SECRET_ID from environment file
-sed -i '/SECRET_ID/d' ./environment
+sed -i '/client_secret/d' ./environment
+
+# Delete SP_OBJECT_ID from environment file
+sed -i '/sp_object_id/d' ./environment
+
+# Delete SUBSCRIPTION_ID from environment file
+sed -i '/subscription_id/d' ./environment
