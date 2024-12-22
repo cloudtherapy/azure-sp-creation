@@ -5,14 +5,6 @@ terraform {
       version = "3.6.3"
     }
   }
-  backend "remote" {
-    hostname = "app.terraform.io"
-    organization = "cloudtherapy"
-
-    workspaces {
-      name = "azure-sp-creation"
-    }
-  }
 }
 
 provider "random" {
