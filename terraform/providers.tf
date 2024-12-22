@@ -15,15 +15,13 @@ terraform {
   }
 }
 
-# Azure Active Directory provider
-# https://registry.terraform.io/providers/hashicorp/azuread/latest/docs
 provider "azuread" {
-  #tenant_id = data.azuread_client_config.this.tenant_id
+
 }
 
-# Azure Resource Manager provider
-# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 provider "azurerm" {
   features {}
-  #subscription_id = data.azurerm_subscription.this.id
+  # TODO: Figure out how to inject the subscription_id
+  # run the following command to resolve not having the subscription_id
+  # export ARM_SUBSCRIPTION_ID="$(az account list --query "[?isDefault].id" --output tsv)"
 }
