@@ -15,7 +15,9 @@ resource "random_pet" "this" {
 
 resource "azuread_application" "this" {
   display_name = random_pet.this.id
-  #identifier_uris = ["http://localhost"]
+  web {
+    redirect_uris = ["https://misfirm.com"]
+  }
   sign_in_audience = "AzureADMultipleOrgs"
   required_resource_access {
     resource_app_id = "00000003-0000-0000-c000-000000000000"
