@@ -25,5 +25,5 @@ provider "azuread" {
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs
 provider "azurerm" {
   features {}
-  subscription_id = data.azurerm_subscription.this.subscription_id
+  subscription_id = data.azurerm_subscription.this.id
 }
