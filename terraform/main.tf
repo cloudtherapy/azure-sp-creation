@@ -6,24 +6,6 @@ data "azurerm_subscription" "this" {
 # Data Source: Principal ID of the current user
 data "azuread_client_config" "this" {}
 
-# Data Source: Azure Resource Group
-data "azurerm_resource_group" "this" {
-  name = var.resource_group
-}
-
-# Data Source: Azure Virtual Network
-data "azurerm_virtual_network" "this" {
-  name                = var.vnet_name
-  resource_group_name = data.azurerm_resource_group.this.name
-}
-
-# Data Source: Azure Virtual Network Subnet
-data "azurerm_subnet" "this" {
-  name                 = var.subnet_name
-  resource_group_name  = data.azurerm_resource_group.this.name
-  virtual_network_name = data.azurerm_virtual_network.this.name
-}
-
 #@@@ Create random pet name for service_princpal
 resource "random_pet" "this" {
   prefix = "sp"
