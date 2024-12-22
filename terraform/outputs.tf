@@ -11,9 +11,9 @@ output "client_secret" {
 }
 
 output "subscription_id" {
-  value = azuread_subcription.this.subscription_id.id
+  value = data.azuread_subscription.this.subscription_id.id
 }
 
 output "tenant_id" {
-  value = azuread_subscription.this.tenant_id.id
+  value = data.azuread_client_config.this.tenant_id
 }
