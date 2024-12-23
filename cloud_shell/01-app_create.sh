@@ -5,7 +5,7 @@ domain_name=`az rest --method get --url https://graph.microsoft.com/v1.0/domains
 app_name="sp_terraform_"${domain_name}
 
 # Display chosen DISPLAY NAME on terminal
-echo "app_name="${app_name}
+echo "app_name="${app_name} >> ./environment
 
 # Retrieve subscription ID
 subscription_id=`az account list --query "[?isDefault].id" --output tsv`
@@ -20,9 +20,3 @@ object_id=`az ad app create --display-name ${app_name} \
 
 # Store OBJECT_ID in environment file
 echo "object_id="${object_id} >> ./environment
-
-# Output OBJECT_ID to terminal
-echo "subscription_id="${subscription_id}
-
-# Output OBJECT_ID to terminal
-echo "object_id="${object_id}
