@@ -1,7 +1,7 @@
 . ./environment
 
 # Destroy Application including Enterprise App
-az ad app delete --id ${OBJECT_ID}
+az ad app delete --id ${object_id}
 
 # Delete OBJECT_ID from environment file
 sed -i '/object_id/d' ./environment
