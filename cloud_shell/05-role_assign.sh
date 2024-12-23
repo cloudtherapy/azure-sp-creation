@@ -1,6 +1,6 @@
 . ./environment
 
 # Assign Contributor role to service principal for a given subscription
-az role assignment create --assignee "${SP_OBJECT_ID}" \
+az role assignment create --assignee "${sp_object_id}" \
 --role "Contributor" \
---scope "/subscriptions/${SUBSCRIPTION_ID}"
+--scope "/subscriptions/${subscription_id}"
