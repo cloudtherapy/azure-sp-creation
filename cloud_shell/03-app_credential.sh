@@ -5,8 +5,8 @@ az ad app credential reset --id ${object_id} \
 # Store appID and secret in environment file
 client_id=`cat secret.json | jq -r '.appId'`
 client_secret=`cat secret.json | jq -r '.password'`
-export $client_id
-export $client_secret
+export client_id
+export client_secret
 
 # Store appID and secret in environment file
 echo "client_id="${client_id} >> ./environment
