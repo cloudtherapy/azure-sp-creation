@@ -1,3 +1,4 @@
+#!/bin/bash
 # Obtain domain name and export
 domain_name=`az rest --method get --url https://graph.microsoft.com/v1.0/domains --query 'value[?isDefault].id' -o tsv`
 export domain_name
