@@ -1,3 +1,0 @@
-. ./environment
-
-cat ./environment
