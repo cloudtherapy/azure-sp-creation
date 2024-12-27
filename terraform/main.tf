@@ -7,6 +7,7 @@ data "azuread_client_config" "this" {}
 #@@@ Create random pet name for service_princpal
 resource "random_pet" "this" {
   prefix = "sp"
+  length = 3
 }
 
 #@@@ Create an App Registration and Service Principal for Azure DevOps

@@ -1,4 +1,4 @@
-output "sp_name" {
+output "app_name" {
   value = random_pet.this.id
 }
 
