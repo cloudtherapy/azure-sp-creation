@@ -12,11 +12,8 @@ sed -i '/object_id/d' ./environment
 # Delete subscription_id from environment file
 sed -i '/subscription_id/d' ./environment
 
-# Delete client_id from environment file
-sed -i '/client_id/d' ./environment
-
-# Delete client_secret from environment file
-sed -i '/client_secret/d' ./environment
+# Delete tenant_id from environment file
+sed -i '/tenant_id/d' ./environment
 
 # Delete sp_object_id from environment file
 sed -i '/sp_object_id/d' ./environment
