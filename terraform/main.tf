@@ -17,7 +17,8 @@ resource "azuread_application" "this" {
   web {
     redirect_uris = ["https://localhost/"]
   }
-  sign_in_audience = "AzureADMultipleOrgs"
+  # Two options for sign-in-audience AzureADMyOrg, AzureADMultipleOrgs
+  sign_in_audience = "AzureADMyOrg"
   required_resource_access {
     resource_app_id = "00000003-0000-0000-c000-000000000000"
 
