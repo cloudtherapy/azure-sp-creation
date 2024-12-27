@@ -20,3 +20,5 @@ sed -i '/client_secret/d' ./environment
 
 # Delete sp_object_id from environment file
 sed -i '/sp_object_id/d' ./environment
+
+rm -Rf ./secret.tfvars.json
