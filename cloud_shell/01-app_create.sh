@@ -3,7 +3,7 @@ domain_name=`az rest --method get --url https://graph.microsoft.com/v1.0/domains
 --query 'value[?isDefault].id' -o tsv`
 
 # Create a unique app name and append a random number
-app_name="sp_terraform_"${domain_name}"_"${RANDOM}
+app_name="sp_cloudshell_"${domain_name}"_"${RANDOM}
 echo "app_name="${app_name} >> ./environment
 
 # Create App Registration
