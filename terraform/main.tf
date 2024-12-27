@@ -6,7 +6,7 @@ data "azuread_client_config" "this" {}
 
 #@@@ Create random pet name for service_princpal
 resource "random_pet" "this" {
-  prefix = "sp"
+  prefix = "sp-terraform"
   length = 3
 }
 
