@@ -10,7 +10,7 @@ resource "random_pet" "this" {
   length = 3
 }
 
-#@@@ Create an App Registration and Service Principal for Azure DevOps
+#@@@ Create an App Registration and Service Principals
 
 resource "azuread_application" "this" {
   display_name = random_pet.this.id
@@ -19,6 +19,8 @@ resource "azuread_application" "this" {
   }
   # Two options for sign-in-audience AzureADMyOrg, AzureADMultipleOrgs
   sign_in_audience = "AzureADMyOrg"
+
+  # This required resource adds the API Permission User.Read
   required_resource_access {
     resource_app_id = "00000003-0000-0000-c000-000000000000"
 
@@ -28,6 +30,8 @@ resource "azuread_application" "this" {
     }
   }
 }
+
+#@@@ Create the associated service prinipal from the application
 
 resource "azuread_service_principal" "this" {
   client_id = azuread_application.this.client_id
